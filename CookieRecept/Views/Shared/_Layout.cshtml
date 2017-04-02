@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Кулинарная книга</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <a href="/"><img src="~/img/logo.png" /></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("О проекте", "About", "Home")</li>
+                    <li>@Html.ActionLink("Рецепты", "Index", "Recept")</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form action="" method="post" class="search">
+                            <input type="search" name="" placeholder="поиск" class="input" />
+                            <input type="submit" name="" value="" class="submit" />
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - GolTROFF production</p>
+            </footer>
+        </div>
+    </div>
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
